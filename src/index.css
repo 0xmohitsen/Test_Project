@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  @apply leading-[normal] m-0;
+}
+*,
+::before,
+::after {
+  border-width: 0;
+}
+.sidebar a{
+ color: #505050;
+}
+
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.filterInvert{
+  filter: invert();
+}
+.container {
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto; /* Centers the container */
+}
+
+.child {
+  width: 100%; /* Responsive width */
+  max-width: 600px; /* Maximum width */
+  margin: 0 auto; /* Centers the child element */
+}
+ .active{
+  background-color: #5d87ff;
+  color: white !important;
+}
+ .sidebar .active:hover {
+  background-color: #5d87ff;
+  color: black !important;
+}
+
+.active img{
+ filter:brightness(5);
+}
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge, and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+.chatApp a{
+  text-decoration: none;
+ 
+}
+.chatApp .active{
+  background-color: transparent;
+  border-bottom: 2px solid midnightblue;
+  color: midnightblue;
+}
+/* Tailwind CSS does not support CSS variables and complex masking out of the box,
+   so these styles need to be manually added or approximated with existing utilities. */
+
+   .bubble {
+    --r: 25px; /* the radius */
+    --t: 30px; /* the size of the tail */
+    
+    max-width: 300px;
+    padding: calc(2*var(--r)/3);
+    -webkit-mask: 
+    radial-gradient(var(--t) at var(--_d) 0, #0000 98%, #000 102%) 
+      var(--_d) 100%/calc(100% - var(--r)) var(--t) no-repeat,
+    conic-gradient(at var(--r) var(--r), #000 75%, #0000 0) 
+      calc(var(--r)/-2) calc(var(--r)/-2) padding-box, 
+    radial-gradient(closest-side at 50% 50%, #000 98%, #0000 101%) 
+      0 0/var(--r) var(--r) space padding-box;
+  
+    
+  }
+  .left {
+    --_d: 0%;
+    border-left: var(--t) solid #0000;
+    margin-right: var(--t);
+    place-self: start;
+    background: skyblue;
+   
+  }
+  .right {
+    --_d: 100%;
+    border-right: var(--t) solid #0000;
+    margin-left: var(--t);
+    background: rgb(145, 145, 231);
+   
+  }
+  .border{
+    border: 1px solid rgb(225, 229, 238);
+  }
+  .border-r{
+    border-right: 1px solid rgb(225, 229, 238);
+  }
+  .border-b{
+    border-bottom: 1px solid rgb(225, 229, 238);
+  }
+  .border-t{
+    border-top: 2px solid rgb(177, 191, 214);
+  }
+  .chathead a{
+    color:#000;
+  }
+  .profile{
+    background-image: url("/public/cover.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 65%;
+  }
+  .border-4 {
+    border:2px solid rgb(85, 112, 87);
+  }
+
+
